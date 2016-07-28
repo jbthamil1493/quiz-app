@@ -1,0 +1,52 @@
+html {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #050515;
+	font-family: 'EB Garamond', serif;
+}
+
+h1, h3, h4 {
+	font-weight: bold;
+	font-style: italic;
+	padding: 20px;
+	color: #f5fffa;
+	text-shadow: 2px 2px #202092;
+}
+
+.introButton {
+	padding: 40px;
+}
+
+#play, #harry, #ron, #hermonie, #albus, #lord, #submit, #nextQuestion {
+	border-color: black;
+	border-width: 3px;
+	border-style: solid;
+	padding: 10px;
+	font-family: 'EB Garamond', serif;
+	font-size: 1.125rem;
+	font-weight: bold;
+	font-style: italic;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.intro {
+	text-align: center;
+}
+
+.game {
+	text-align: center;
+}
+
+.questions {
+	text-align: center;
+}
+
+.feedback {
+	text-align: center;
+}
+
+li {
+	list-style: none;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Harry Potter Quiz</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	<!-- Introduction -->
+
+	<section class="intro">	
+		<h1><strong>Enter This Quiz<br /> if you Dare</strong></h1>
+		<div class="introButton">
+			<div>
+				<button id="play">Play Game</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- Game Section -->
+
+	<section class="game">
+		<h1 class="main"><strong>Harry Potter Quiz</strong></h1>
+		<hr />
+		<h3 class="main">Choose a character listed below and begin your wizarding journey!</h3>
+		<nav class="characterList">
+			<ul class="characters">
+				<li><button id="harry">Harry Potter</button></li>
+				<li><button id="ron">Ron Weasley</button></li>
+				<li><button id="hermonie">Hermonie Granger</button></li>
+				<li><button id="albus">Albus Dumbledore</button></li>
+				<li><button id="lord">Lord Voldemort</button></li>
+			</ul>
+		</nav>
+	</section>
+
+	<!-- Question Section -->
+	
+	<section class="questions">
+		<h4 class="main">Question <span id="count">1</span> of 5</h4>
+		<hr />
+		<nav class="question">
+			<ul></ul>
+		</nav>
+		<div class="answerButton">
+			<div>
+				<button id="submit">Submit</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- Feedback Section -->
+
+	<section class="feedback">
+		<h3></h3>
+		<hr />
+		<nav class="feedbackExplanation">
+			<ul></ul>
+		</nav>
+		<div class="nextQuestion">
+			<div>
+				<button id="nextQuestion">Next Question</button>
+			</div>
+		</div>
+	</section>
+	<script src="js/jquery-2.2.4.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
