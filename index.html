@@ -24,7 +24,7 @@
 	<section class="game">
 		<h1 class="main"><strong>Harry Potter Quiz</strong></h1>
 		<hr />
-		<h3 class="main">Choose a character listed below and begin your wizarding journey!</h3>
+		<h3 class="main">Choose a Character and test your wizarding knowledge:</h3>
 		<nav class="characterList">
 			<ul class="characters">
 				<li><button id="harry">Harry Potter</button></li>
@@ -39,10 +39,12 @@
 	<!-- Question Section -->
 	
 	<section class="questions">
-		<h4 class="main">Question <span id="count">1</span> of 5</h4>
+		<h2 class="main">Question <span id="count">1</span> of 5</h2>
 		<hr />
-		<nav class="question">
-			<ul></ul>
+		<div class="question">
+		</div>
+		<nav>
+			<ul class="answerChoices"></ul>
 		</nav>
 		<div class="answerButton">
 			<div>
@@ -54,11 +56,8 @@
 	<!-- Feedback Section -->
 
 	<section class="feedback">
-		<h3></h3>
+		<ul class= "feedbackAnswer"></ul>
 		<hr />
-		<nav class="feedbackExplanation">
-			<ul></ul>
-		</nav>
 		<div class="nextQuestion">
 			<div>
 				<button id="nextQuestion">Next Question</button>
@@ -66,7 +65,7 @@
 		</div>
 	</section>
 	<script src="js/jquery-2.2.4.js"></script>
-	<script src="js/app.js"></script>
+	<script src="js/questions.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>

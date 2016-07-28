@@ -13,16 +13,19 @@ $(document).ready(function() {
 	$("#harry").click(function() {
 		$(".game").hide();
 		$(".questions").show();
+		$(".question").append("<p>Who is Harry Potter's wife?</p>");
 	});
 
 	$("#ron").click(function() {
 		$(".game").hide();
 		$(".questions").show();
+		$(".question").append("<p>Who is Ron's wife?</p>");
 	});
 
 	$("#hermonie").click(function() {
 		$(".game").hide();
 		$(".questions").show();
+		$(".question").append("<p>Who is Hermonie's husband?</p>");
 	});
 
 	$("#albus").click(function() {
@@ -42,6 +45,7 @@ $(document).ready(function() {
 
 	$("#nextQuestion").click(function() {
 		$(".feedback").hide();
-		$(".questions").show();
+		$(".game").show();
 	});
+
 });
