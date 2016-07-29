@@ -1,45 +1,33 @@
 $(document).ready(function() {
 	$(".game").hide();
 
-	$(".questions").hide();
-
 	$(".feedback").hide();
+
+	var questionOne = {
+		question1: "What house was the sorting hat at first thinking about putting Harry in?",
+		choices: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
+		qnumber: 1,
+		correct: 4,
+		};
+	var questionTwo = {
+		question2: "Who was the wizard who was responsible for the deaths of Harry's parents?",
+		choices: ["Sirius Black", "Tom Riddle", "Peter Pettigrew", "Lucius Malfoy"],
+		qnumber: 2,
+		correct: 2,
+	}
+
+	var numberCorrect = 0;
+
+	var currentQuestion = 0;
 
 	$("#play").click(function() {
 		$(".game").show();
 		$(".intro").hide();
 	});
 
-	$("#harry").click(function() {
-		$(".game").hide();
-		$(".questions").show();
-		$(".question").append("<p>Who is Harry Potter's wife?</p>");
-	});
-
-	$("#ron").click(function() {
-		$(".game").hide();
-		$(".questions").show();
-		$(".question").append("<p>Who is Ron's wife?</p>");
-	});
-
-	$("#hermonie").click(function() {
-		$(".game").hide();
-		$(".questions").show();
-		$(".question").append("<p>Who is Hermonie's husband?</p>");
-	});
-
-	$("#albus").click(function() {
-		$(".game").hide();
-		$(".questions").show();
-	});
-
-	$("#lord").click(function() {
-		$(".game").hide();
-		$(".questions").show();
-	});
-
 	$("#submit").click(function() {
-		$(".questions").hide();
+		var answer = $("input").val();
+		$(".game").hide();
 		$(".feedback").show();
 	});
 

@@ -11,7 +11,7 @@ body {
 
 }
 
-h1, h2, h3, p {
+h1, h2 {
 	font-weight: bold;
 	font-style: italic;
 	padding: 20px;
@@ -23,7 +23,7 @@ h1, h2, h3, p {
 	padding: 40px;
 }
 
-#play, #harry, #ron, #hermonie, #albus, #lord, #submit, #nextQuestion {
+#play, #submit, #nextQuestion {
 	border-color: black;
 	border-width: 3px;
 	border-style: solid;
@@ -37,5 +37,5 @@ h1, h2, h3, p {
 
 li {
 	list-style: none;
-	display: inline;
+	display: i
 }

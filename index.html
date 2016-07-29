@@ -23,29 +23,16 @@
 
 	<section class="game">
 		<h1 class="main"><strong>Harry Potter Quiz</strong></h1>
-		<hr />
-		<h3 class="main">Choose a Character and test your wizarding knowledge:</h3>
-		<nav class="characterList">
-			<ul class="characters">
-				<li><button id="harry">Harry Potter</button></li>
-				<li><button id="ron">Ron Weasley</button></li>
-				<li><button id="hermonie">Hermonie Granger</button></li>
-				<li><button id="albus">Albus Dumbledore</button></li>
-				<li><button id="lord">Lord Voldemort</button></li>
-			</ul>
-		</nav>
-	</section>
-
-	<!-- Question Section -->
-	
-	<section class="questions">
 		<h2 class="main">Question <span id="count">1</span> of 5</h2>
 		<hr />
 		<div class="question">
 		</div>
-		<nav>
-			<ul class="answerChoices"></ul>
-		</nav>
+		<div class="answerChoices">
+			<input type="radio"/>
+			<input type="radio"/>
+			<input type="radio"/>
+			<input type="radio"/>
+		</div>
 		<div class="answerButton">
 			<div>
 				<button id="submit">Submit</button>
@@ -65,7 +52,6 @@
 		</div>
 	</section>
 	<script src="js/jquery-2.2.4.js"></script>
-	<script src="js/questions.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
