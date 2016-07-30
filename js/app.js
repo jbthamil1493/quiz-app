@@ -33,8 +33,8 @@ $(document).ready(function() {
 
 	$("#nextQuestion").click(function() {
 		$(".feedback").hide();
-		$("ul.feedbackAnswer").remove();
 		$(".game").show();
+		$("ul.feedbackAnswer").remove();
 	});
 
 	function playGame() {
@@ -45,8 +45,6 @@ $(document).ready(function() {
 			}
 			else {
 				$("ul.feedbackAnswer").append("<li>You are incorrect!</li>");
-				$("input").remove();
-				$(".question_wrapper").remove();
 			}
 		}
 	}
