@@ -33,17 +33,20 @@ $(document).ready(function() {
 
 	$("#nextQuestion").click(function() {
 		$(".feedback").hide();
+		$("ul.feedbackAnswer").remove();
 		$(".game").show();
 	});
 
 	function playGame() {
 		if (currentQuestion < questions.length) {
-			if ($("input:checked").val() === questions[currentQuestion].answer) {
+			if ($("input:checked").val() === questions.correct) {
 				numberCorrect++;
 				$("ul.feedbackAnswer").append("<li>You are correct!</li>");
 			}
 			else {
 				$("ul.feedbackAnswer").append("<li>You are incorrect!</li>");
+				$("input").remove();
+				$(".question_wrapper").remove();
 			}
 		}
 	}
