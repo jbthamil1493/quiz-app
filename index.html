@@ -26,12 +26,12 @@
 		<h2 class="main">Question <span id="count">1</span> of 5</h2>
 		<hr />
 		<div class="question_wrapper">
-			<div class="question">Question #1: What house was the sorting hat at first thinking about putting Harry in?</div>
+			<div class="question">What house was the sorting hat at first thinking about putting Harry in?</div>
 			<div class="answerChoices">
 				<input type="radio" name="option" class="option" value="0"><span class="answer">Gryffindor</span><br />
-				<input type="radio" name="option" class="option" value="0"><span class="answer">Hufflepuff</span><br />
-				<input type="radio" name="option" class="option" value="0"><span class="answer">Ravenclaw</span><br />
-				<input type="radio" name="option" class="option" value="0"><span class="answer">Slytherin</span><br />
+				<input type="radio" name="option" class="option" value="1"><span class="answer">Hufflepuff</span><br />
+				<input type="radio" name="option" class="option" value="2"><span class="answer">Ravenclaw</span><br />
+				<input type="radio" name="option" class="option" value="3"><span class="answer">Slytherin</span><br />
 			</div>
 		</div>
 		<div class="answerButton">
@@ -39,16 +39,10 @@
 				<button id="submit">Submit</button>
 			</div>
 		</div>
-	</section>
-
-	<!-- Feedback Section -->
-
-	<section class="feedback">
-		<ul class= "feedbackAnswer"></ul>
-		<hr />
-		<div class="nextQuestion">
+		<div class="correctNumber">
 			<div>
-				<button id="nextQuestion">Next Question</button>
+				<ul class="correctAnswer"></ul>
+				<span id="countCorrect">0</span>
 			</div>
 		</div>
 	</section>
