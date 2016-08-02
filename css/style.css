@@ -35,3 +35,7 @@ h1, h2, div, li {
 	box-shadow: 10px 10px 5px #888888;
 }
 
+.answer, li {
+	list-style: none;
+}
+
