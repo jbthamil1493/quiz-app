@@ -6,31 +6,26 @@ $(document).ready(function() {
 	var questions = [{
 		question: "What house was the sorting hat at first thinking about putting Harry in?",
 		choices: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
-		qNumber: 0,
 		correct: 3,
 		},
 		{
-		question: "Who was the wizard who was responsible for the deaths of Harry's parents?",
+		question: "Who was the wizard who was responsible for the deaths of Harry's parents because of betrayal?",
 		choices: ["Sirius Black", "Tom Riddle", "Peter Pettigrew", "Lucius Malfoy"],
-		qNumber: 1,
 		correct: 1,
 		},
 		{
 		question: "Who was the half-blood prince?",
 		choices: ["James Potter", "Tom Riddle", "Sirius Black", "Severus Snape"],
-		qNumber: 2,
 		correct: 3,	
 		},
 		{
 		question: "What was the form that Harry's patronus took?",
 		choices: ["Stag", "Moose", "Doe", "Prongs"],
-		qNumber: 3,
 		correct: 0,
 		},
 		{
 		question: "Who was the wizard who killed Bellatrix Lestrange?",
 		choices: ["Arthur Weasley", "Molly Weasley", "Ron Weasley", "George Weasley"],
-		qNumber: 4,
 		correct: 1,
 	}];
 
@@ -42,7 +37,7 @@ $(document).ready(function() {
 	$("#play").click(function() {
 		var currentQuestion = 0;
 		var numberCorrect = 0;
-		var newQuestion = '<div class="question">' + questions[currentQuestion].question + '</div><div class="answerChoices"><input type="radio" name="option" class="option" value="0"><span class="answer">' + questions[currentQuestion].choices[0] + '</span><input type="radio" name="option" class="option" value="1"><span class="answer">' + questions[currentQuestion].choices[1] + '</span><input type="radio" name="option" class="option" value="2"><span class="answer">' + questions[currentQuestion].choices[2] + '</span><input type="radio" name="option" class="option" value="3"><span class="answer">' + questions[currentQuestion].choices[3] + '</span></div></div>';
+		var newQuestion = '<div class="question">' + questions[currentQuestion].question + '</div><div class="answerChoices"><input type="radio" name="option" class="option" value="0"><span class="answer">' + questions[currentQuestion].choices[0] + '</span><br /><input type="radio" name="option" class="option" value="1"><span class="answer">' + questions[currentQuestion].choices[1] + '</span><br /><input type="radio" name="option" class="option" value="2"><span class="answer">' + questions[currentQuestion].choices[2] + '</span><br /><input type="radio" name="option" class="option" value="3"><span class="answer">' + questions[currentQuestion].choices[3] + '</span><br /></div></div>';
 		$(".intro").hide();
 		$(".game").show();
 	});
@@ -62,16 +57,13 @@ $(document).ready(function() {
 
 
 	function validateAnswer() {
-		var chosenAnswer = $("input[type=radio]:checked").val();
-		if (currentQuestion < questions.length) {
-			if (chosenAnswer === questions[currentQuestion].correct) {
-				$(".feedbackAnswer").append("<li>You are correct!</li>");
-				$("span#countCorrect").html(parseInt($("span#countCorrect").html()) + 1);
-				numberCorrect++;
-			}
-			else {
-				$(".feedbackAnswer").append("<li>You are incorrect!</li>");
-			}
+		var chosenAnswer = $("input:checked").val();
+		if (chosenAnswer === questions[currentQuestion].correct) {
+			$(".feedbackAnswer").append("<li>You are correct!</li>");
+			numberCorrect++;
+		}
+		else {
+			$(".feedbackAnswer").append("<li>You are incorrect!</li>");
 		}
 	}	
 
@@ -83,7 +75,7 @@ $(document).ready(function() {
 			$(".answerChoices input").remove();
 			$(".answerChoices span").remove();
 			$(".feedbackAnswer").remove();
-			var newQuestion = '<div class="question">' + questions[currentQuestion].question + '</div><div class="answerChoices"><input type="radio" name="option" class="option" value="0"><span class="answer">' + questions[currentQuestion].choices[0] + '</span><input type="radio" name="option" class="option" value="1"><span class="answer">' + questions[currentQuestion].choices[1] + '</span><input type="radio" name="option" class="option" value="2"><span class="answer">' + questions[currentQuestion].choices[2] + '</span><input type="radio" name="option" class="option" value="3"><span class="answer">' + questions[currentQuestion].choices[3] + '</span></div></div>';
+			var newQuestion = '<div class="question">' + questions[currentQuestion].question + '</div><div class="answerChoices"><input type="radio" name="option" class="option" value="0"><span class="answer">' + questions[currentQuestion].choices[0] + '</span><br /><input type="radio" name="option" class="option" value="1"><span class="answer">' + questions[currentQuestion].choices[1] + '</span><br /><input type="radio" name="option" class="option" value="2"><span class="answer">' + questions[currentQuestion].choices[2] + '</span><br /><input type="radio" name="option" class="option" value="3"><span class="answer">' + questions[currentQuestion].choices[3] + '</span><br /></div></div>';
 			$(".question_wrapper").html(newQuestion);
 		}
 		else {
