@@ -23,7 +23,7 @@ h1, h2, div, li {
 	padding: 40px;
 }
 
-#play, #submit, #nextQuestion #newGame {
+#play, #submit, #newGame {
 	border-color: black;
 	border-width: 3px;
 	border-style: solid;

@@ -67,7 +67,7 @@ $(document).ready(function() {
 		$("#question").text(questions[currentQuestion].question);
 
 		for (var i = 0; i < choices.length; i++) {
-			$("#answerChoices").append('<input name="radio" type="radio" value =""' + choices[i] + "<br />");
+			$("#answerChoices").append('<input name="radio" type="radio" value =""' + ">" + choices[i] + "<br />");
 		}
 	}
 
@@ -79,7 +79,9 @@ $(document).ready(function() {
 	}
 
 	function incorrectAnswer() {
-		alert('Answer Incorrect');
+		$("#answerChoices").empty();
+		currentQuestion++;
+		generateQuestion();
 	}
 
 	function gameOver() {
@@ -88,6 +90,7 @@ $(document).ready(function() {
 		$(".intro").hide();
 		$(".main").hide();
 		$(".question_wrapper").hide();
+		$(".answerButton").hide();
 		$("#gameOver").html('<h1>Game Over</h1><span id="score"></span><br /><br /><button id="newGame">New Game</button>');
 		$("#newGame").click(function() {
 			newGame();
@@ -95,11 +98,9 @@ $(document).ready(function() {
 	}
 
 	function newGame() {
-		$(".main").show();
-		$("#question_wrapper").show();
+		$(".intro").show();
 		$("#gameOver").hide();
-		currentQuestion = 0;
-		generateQuestion();
+		location.reload();
 	}
 	
 });
