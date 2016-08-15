@@ -8,6 +8,16 @@
 </head>
 <body>
 
+	<!-- Game Over -->
+
+	<div id="gameOver">
+		<h1>Game Over</h1>
+		<span id="score"></span>
+		<br />
+		<br />
+		<button id="newGame">New Game</button>
+	</div>
+
 	<!-- Introduction -->
 
 	<section class="intro">	
@@ -26,12 +36,12 @@
 		<h2 class="main">Question <span id="count">1</span> of 5</h2>
 		<hr />
 		<div class="question_wrapper">
-			<div class="question">What house was the sorting hat at first thinking about putting Harry in?</div>
-			<div class="answerChoices">
-				<input type="radio" name="option" class="option" value="0"><span class="answer">Gryffindor</span><br />
-				<input type="radio" name="option" class="option" value="1"><span class="answer">Hufflepuff</span><br />
-				<input type="radio" name="option" class="option" value="2"><span class="answer">Ravenclaw</span><br />
-				<input type="radio" name="option" class="option" value="3"><span class="answer">Slytherin</span><br />
+			<div id="question">What house was the sorting hat at first thinking about putting Harry in?</div>
+			<div id="answerChoices">
+				<input type="radio" type="radio" class="option" value="Gryffindor">Gryffindor<br />
+				<input type="radio" type="radio" class="option" value="Hufflepuff">Hufflepuff<br />
+				<input type="radio" type="radio" class="option" value="Ravenclaw">Ravenclaw<br />
+				<input type="radio" type="radio" class="option" value="Slytherin">Slytherin<br />
 			</div>
 		</div>
 		<div class="answerButton">
@@ -41,19 +51,6 @@
 		</div>
 	</section>
 
-	<!-- Feedback Section -->
-
-	<section class="feedback">
-		<ul class="feedbackAnswer"></ul>
-		<div class="correctNumber">
-			<span id="countCorrect">0</span>
-		</div>
-		<div class="nextQuestionButton">
-			<div>
-				<button id="submit">Next Question</button>
-			</div>
-		</div>
-	</section>
 	<script src="js/jquery-2.2.4.js"></script>
 	<script src="js/app.js"></script>
 </body>

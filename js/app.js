@@ -1,92 +1,105 @@
 $(document).ready(function() {
 	$(".game").hide();
 
-	$(".feedback").hide();
+	$("#gameOver").hide();
+
+	var currentQuestion = 0;
+
+	var score = 0;
 
 	var questions = [{
 		question: "What house was the sorting hat at first thinking about putting Harry in?",
 		choices: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
-		correct: 3,
+		correct: "Slytherin",
 		},
 		{
 		question: "Who was the wizard who was responsible for the deaths of Harry's parents because of betrayal?",
 		choices: ["Sirius Black", "Tom Riddle", "Peter Pettigrew", "Lucius Malfoy"],
-		correct: 1,
+		correct: "Peter Pettigrew",
 		},
 		{
 		question: "Who was the half-blood prince?",
 		choices: ["James Potter", "Tom Riddle", "Sirius Black", "Severus Snape"],
-		correct: 3,	
+		correct: "Severus Snape",	
 		},
 		{
 		question: "What was the form that Harry's patronus took?",
 		choices: ["Stag", "Moose", "Doe", "Prongs"],
-		correct: 0,
+		correct: "Stag",
 		},
 		{
 		question: "Who was the wizard who killed Bellatrix Lestrange?",
 		choices: ["Arthur Weasley", "Molly Weasley", "Ron Weasley", "George Weasley"],
-		correct: 1,
+		correct: "Molly Weasley",
 	}];
-
-	var currentQuestion = 0;
-
-	var numberCorrect = 0;
 
 
 	$("#play").click(function() {
-		var currentQuestion = 0;
-		var numberCorrect = 0;
-		var newQuestion = '<div class="question">' + questions[currentQuestion].question + '</div><div class="answerChoices"><input type="radio" name="option" class="option" value="0"><span class="answer">' + questions[currentQuestion].choices[0] + '</span><br /><input type="radio" name="option" class="option" value="1"><span class="answer">' + questions[currentQuestion].choices[1] + '</span><br /><input type="radio" name="option" class="option" value="2"><span class="answer">' + questions[currentQuestion].choices[2] + '</span><br /><input type="radio" name="option" class="option" value="3"><span class="answer">' + questions[currentQuestion].choices[3] + '</span><br /></div></div>';
 		$(".intro").hide();
 		$(".game").show();
+		generateQuestion();
 	});
 
 	$("#submit").click(function() {
-		$(".game").hide();
-		$(".feedback").show();
-		validateAnswer();
-		currentQuestion++;
-	});
-
-	$(".nextQuestionButton").click(function() {
-		$(".feedback").hide();
-		$(".game").show();
-		nextQuestion();
+		var selectedValue = $("input[name=radio]:checked").val();
+		validateAnswer(selectedValue);
 	});
 
 
-	function validateAnswer() {
-		var chosenAnswer = $("input:checked").val();
-		if (chosenAnswer === questions[currentQuestion].correct) {
-			$(".feedbackAnswer").append("<li>You are correct!</li>");
-			numberCorrect++;
+	function validateAnswer(input) {
+		if (currentQuestion === questions.length - 1) {
+			gameOver();
+			return;
+		}
+		if (input === questions[currentQuestion].correct) {
+			correctAnswer();
 		}
 		else {
-			$(".feedbackAnswer").append("<li>You are incorrect!</li>");
+			incorrectAnswer();
 		}
 	}	
 
 
-	function nextQuestion() {
-		if (currentQuestion < 5) {
-			$("span#count").html(parseInt($("span#count").html()) + 1);
-			$(".question").remove();
-			$(".answerChoices input").remove();
-			$(".answerChoices span").remove();
-			$(".feedbackAnswer").remove();
-			var newQuestion = '<div class="question">' + questions[currentQuestion].question + '</div><div class="answerChoices"><input type="radio" name="option" class="option" value="0"><span class="answer">' + questions[currentQuestion].choices[0] + '</span><br /><input type="radio" name="option" class="option" value="1"><span class="answer">' + questions[currentQuestion].choices[1] + '</span><br /><input type="radio" name="option" class="option" value="2"><span class="answer">' + questions[currentQuestion].choices[2] + '</span><br /><input type="radio" name="option" class="option" value="3"><span class="answer">' + questions[currentQuestion].choices[3] + '</span><br /></div></div>';
-			$(".question_wrapper").html(newQuestion);
+	function generateQuestion() {
+		
+		var choices = questions[currentQuestion].choices;
+
+		$("#question").text(questions[currentQuestion].question);
+
+		for (var i = 0; i < choices.length; i++) {
+			$("#answerChoices").append('<input name="radio" type="radio" value =""' + choices[i] + "<br />");
 		}
-		else {
-			$(".question").remove();
-			$(".answerChoices input").remove();
-			$(".answerChoices span").remove();
-			$(".feedbackAnswer").remove();
-			$(".game").hide();
-			$(".intro").show();
-			window.location.reload();
-		}
+	}
+
+	function correctAnswer() {
+		$("#answerChoices").empty();
+		currentQuestion++;
+		score++;
+		generateQuestion();
+	}
+
+	function incorrectAnswer() {
+		alert('Answer Incorrect');
+	}
+
+	function gameOver() {
+		$("#answerChoices").empty();
+		$("#gameOver").show();
+		$(".intro").hide();
+		$(".main").hide();
+		$(".question_wrapper").hide();
+		$("#gameOver").html('<h1>Game Over</h1><span id="score"></span><br /><br /><button id="newGame">New Game</button>');
+		$("#newGame").click(function() {
+			newGame();
+		});
+	}
+
+	function newGame() {
+		$(".main").show();
+		$("#question_wrapper").show();
+		$("#gameOver").hide();
+		currentQuestion = 0;
+		generateQuestion();
 	}
 	
 });
