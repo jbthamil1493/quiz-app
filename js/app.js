@@ -46,12 +46,12 @@ $(document).ready(function() {
 	});
 
 
-	function validateAnswer(input) {
+	function validateAnswer(selectedValue) {
 		if (currentQuestion === questions.length - 1) {
 			gameOver();
 			return;
 		}
-		if (input === questions[currentQuestion].correct) {
+		if (selectedValue === questions[currentQuestion].correct) {
 			correctAnswer();
 		}
 		else {
@@ -72,6 +72,7 @@ $(document).ready(function() {
 	}
 
 	function correctAnswer() {
+		alert("Correct");
 		$("#answerChoices").empty();
 		currentQuestion++;
 		score++;
@@ -79,6 +80,7 @@ $(document).ready(function() {
 	}
 
 	function incorrectAnswer() {
+		alert("Incorrect");
 		$("#answerChoices").empty();
 		currentQuestion++;
 		generateQuestion();
