@@ -43,6 +43,7 @@ $(document).ready(function() {
 	$("#submit").click(function() {
 		var selectedValue = $("input[name=radio]:checked").val();
 		validateAnswer(selectedValue);
+		$("span#count").html(parseInt($("span#count").html()) + 1);
 	});
 
 
@@ -76,6 +77,7 @@ $(document).ready(function() {
 		$("#answerChoices").empty();
 		currentQuestion++;
 		score++;
+		$("span#score").html(parseInt($("span#score").html()) + 1);
 		generateQuestion();
 	}
 
