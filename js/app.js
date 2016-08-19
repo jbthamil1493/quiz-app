@@ -48,11 +48,11 @@ $(document).ready(function() {
 
 
 	function validateAnswer(selectedValue) {
-		if (currentQuestion === questions.length - 1) {
+		if (currentQuestion === (questions.length - 1)) {
 			gameOver();
 			return;
 		}
-		if (selectedValue === questions[currentQuestion].correct) {
+		if (questions[currentQuestion].correct === selectedValue) {
 			correctAnswer();
 		}
 		else {
@@ -68,7 +68,7 @@ $(document).ready(function() {
 		$("#question").text(questions[currentQuestion].question);
 
 		for (var i = 0; i < choices.length; i++) {
-			$("#answerChoices").append('<input name="radio" type="radio" value =""' + ">" + choices[i] + "<br />");
+			$("#answerChoices").append('<input name="radio" type="radio" value ="'+ choices[i] +'"' + ">" + choices[i] + "<br />");
 		}
 	}
 

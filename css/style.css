@@ -11,7 +11,7 @@ body {
 
 }
 
-h1, h2, div, li {
+h1, h2, div, li, h3 {
 	font-weight: bold;
 	font-style: italic;
 	padding: 20px;
