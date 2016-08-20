@@ -48,9 +48,9 @@ $(document).ready(function() {
 
 
 	function validateAnswer(selectedValue) {
-		if (currentQuestion === (questions.length - 1)) {
+		if (currentQuestion === questions.length - 1) {
+			alert('Congratulations, you are done!');
 			gameOver();
-			return;
 		}
 		if (questions[currentQuestion].correct === selectedValue) {
 			correctAnswer();
@@ -59,7 +59,6 @@ $(document).ready(function() {
 			incorrectAnswer();
 		}
 	}	
-
 
 	function generateQuestion() {
 		
@@ -95,7 +94,7 @@ $(document).ready(function() {
 		$(".main").hide();
 		$(".question_wrapper").hide();
 		$(".answerButton").hide();
-		$("#gameOver").html('<h1>Game Over</h1><span id="score"></span><br /><br /><button id="newGame">New Game</button>');
+		$("#gameOver").html('<h1>Game Over</h1><br /><button id="newGame">New Game</button>');
 		$("#newGame").click(function() {
 			newGame();
 		});
